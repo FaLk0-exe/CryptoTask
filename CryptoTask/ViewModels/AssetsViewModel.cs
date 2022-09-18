@@ -1,6 +1,7 @@
 ﻿using CryptoTask.Models;
 using CryptoTask.Services.Helpers;
 using CryptoTask.Services.Parsers;
+using DevExpress.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,7 +23,7 @@ namespace CryptoTask.ViewModels
 
         public AssetsViewModel()
         {
-            Assets = new ObservableCollection<Asset>(OpenApiJsonParser.ParseAssets(_assetsRequest));
+            Assets = GetTop10Assets();
             StartTimer();
         }
 
@@ -46,11 +47,26 @@ namespace CryptoTask.ViewModels
             if (ConnectionChecker.OK())
             {
                 Assets.Clear();
-                var assets = new ObservableCollection<Asset>(OpenApiJsonParser.ParseAssets(_assetsRequest).OrderByDescending(a => a.price));
+                var assets = GetTop10Assets();
                 foreach (var a in assets)
                     Assets.Add(a);
             }
 
+        }
+
+        private ObservableCollection<Asset> GetTop10Assets()
+        {
+            return new ObservableCollection<Asset>(OpenApiJsonParser.ParseAssets(_assetsRequest).Take(10).OrderByDescending(a => a.price));
+        }
+
+        ICommand NavigateToDetailsWindow
+        {
+            get
+            {
+                return new DelegateCommand()=>{
+
+                }
+            }
         }
     }
 }

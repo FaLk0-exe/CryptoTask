@@ -78,6 +78,9 @@
     <Compile Include="Services\Parsers\OpenApiJsonParser.cs" />
     <Compile Include="Services\RegexCollections\HttpRequestRegexCollection.cs" />
     <Compile Include="ViewModels\AssetsViewModel.cs" />
+    <Compile Include="Views\AssetDetailsWindow.xaml.cs">
+      <DependentUpon>AssetDetailsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -114,6 +117,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\AssetDetailsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

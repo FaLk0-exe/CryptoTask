@@ -6,7 +6,29 @@
         xmlns:local="clr-namespace:CryptoTask.Views"
         mc:Ignorable="d"
         Background="#FF474747" Title="AssetDetailsWindow" Height="450" Width="800">
-    <Grid>
+	<Grid>
 		<Image Source="whitelogo.png" HorizontalAlignment="Left" Height="56" VerticalAlignment="Top" Width="70" Margin="10,10,0,0" RenderTransformOrigin="0.588,0.661"/>
+		<Label HorizontalAlignment="Left" Margin="200,10,0,0" VerticalAlignment="Top">
+			<Label Content="Detailed asset's information" FontSize="30px" Height="53" Width="390" Foreground="White"/>
+		</Label>
+		<Label Content="Id" Foreground="White" HorizontalAlignment="Left" Margin="200,100,0,0" VerticalAlignment="Top"/>
+		<Label Content="Name" Foreground="White" HorizontalAlignment="Left" Margin="430,100,0,0" VerticalAlignment="Top"/>
+		<Label Content="Price" Foreground="White" HorizontalAlignment="Left" Margin="200,130,0,0" VerticalAlignment="Top"/>
+		<Label Content="Volume, 24h" Foreground="White" HorizontalAlignment="Left" Margin="430,130,0,0" VerticalAlignment="Top"/>
+		<Label Content="Change, 1h" Foreground="White" HorizontalAlignment="Left" Margin="200,160,0,0" VerticalAlignment="Top"/>
+		<Label Content="Change, 12h" Foreground="White" HorizontalAlignment="Left" Margin="430,160,0,0" VerticalAlignment="Top"/>
+		<Label Content="Change, 24h" Foreground="White" HorizontalAlignment="Left" Margin="200,190,0,0" VerticalAlignment="Top"/>
+		<Label Content="Change, 7d" Foreground="White" HorizontalAlignment="Left" Margin="430,190,0,0" VerticalAlignment="Top"/>
+
+		<Label Content="Id" Foreground="White" HorizontalAlignment="Left" Margin="280,100,0,0" VerticalAlignment="Top"/>
+		<Label Content="Name" Foreground="White" HorizontalAlignment="Left" Margin="520,100,0,0" VerticalAlignment="Top"/>
+		<Label Content="Price" Foreground="White" HorizontalAlignment="Left" Margin="280,130,0,0" VerticalAlignment="Top"/>
+		<Label Content="Volume, 24h" Foreground="White" HorizontalAlignment="Left" Margin="520,130,0,0" VerticalAlignment="Top"/>
+		<Label Content="Change, 1h" Foreground="White" HorizontalAlignment="Left" Margin="280,160,0,0" VerticalAlignment="Top"/>
+		<Label Content="Change, 12h" Foreground="White" HorizontalAlignment="Left" Margin="520,160,0,0" VerticalAlignment="Top"/>
+		<Label Content="Change, 24h" Foreground="White" HorizontalAlignment="Left" Margin="280,190,0,0" VerticalAlignment="Top"/>
+		<Label Content="Change, 7d" Foreground="White" HorizontalAlignment="Left" Margin="520,190,0,0" VerticalAlignment="Top"/>
+		<Label Content="Website:" Foreground="White" HorizontalAlignment="Left" Margin="240,260,0,0" VerticalAlignment="Top"/>
+
 	</Grid>
 </Window>

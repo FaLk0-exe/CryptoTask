@@ -29,7 +29,6 @@ namespace CryptoTask.Models
         public decimal change24h { get; set; }
         [JsonProperty("change_7d")]
         public decimal change7d { get; set; }
-        [JsonProperty("status")]
 
 
     }

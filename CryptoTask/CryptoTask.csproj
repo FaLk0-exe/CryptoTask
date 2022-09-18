@@ -88,8 +88,6 @@
   <ItemGroup>
     <Compile Include="Models\Asset.cs" />
     <Compile Include="Models\BaseVM.cs" />
-    <Compile Include="Models\Currency.cs" />
-    <Compile Include="Models\Quote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

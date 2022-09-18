@@ -77,6 +77,7 @@
     <Compile Include="Services\Helpers\ConnectionChecker.cs" />
     <Compile Include="Services\Parsers\OpenApiJsonParser.cs" />
     <Compile Include="Services\RegexCollections\HttpRequestRegexCollection.cs" />
+    <Compile Include="ViewModels\AssetDetailsViewModel.cs" />
     <Compile Include="ViewModels\AssetsViewModel.cs" />
     <Compile Include="Views\AssetDetailsWindow.xaml.cs">
       <DependentUpon>AssetDetailsWindow.xaml</DependentUpon>

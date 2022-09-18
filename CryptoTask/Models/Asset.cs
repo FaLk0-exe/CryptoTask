@@ -16,8 +16,19 @@ namespace CryptoTask.Models
         [JsonProperty("name")]
         public string name { get; set; }
 
+        private string _website;
+
         [JsonProperty("website")]
-        public string website { get; set; }
+        public string website { 
+            get
+            {
+                return _website == "" ? "no" : _website;
+            }
+            set
+            {
+                _website = value;
+            }
+        }
 
         [JsonProperty("price")]
         public decimal price { get; set; }

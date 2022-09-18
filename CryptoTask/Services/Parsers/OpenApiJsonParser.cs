@@ -13,7 +13,7 @@ namespace CryptoTask.Services.Parsers
 {
     public static class OpenApiJsonParser
     {
-        public async static Task<List<Asset>> ParseAssets(string request)
+        public static List<Asset> ParseAssets(string request)
         {
             if (!HttpRequestRegexCollection.AssetsRequestRegex.IsMatch(request))
             {
@@ -22,8 +22,8 @@ namespace CryptoTask.Services.Parsers
             else
             {
                 var httpClient = new HttpClient();
-                var response = (await httpClient.GetAsync(request)).EnsureSuccessStatusCode();
-                string body = await response.Content.ReadAsStringAsync();
+                var response = httpClient.GetAsync(request);
+                string body = response.Result.Content.ReadAsStringAsync().Result;
                 Regex r1 = new Regex(@",""next"":""\d+?""");
                 Regex r2 = new Regex(@"{""assets"":");
                 body = r2.Replace(r1.Replace(body, ""), "");

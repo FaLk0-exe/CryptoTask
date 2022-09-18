@@ -14,13 +14,15 @@ namespace CryptoTask.ViewModels
     public class AssetsViewModel : BaseVM
     {
         private readonly string _assetsRequest = @"https://cryptingup.com/api/assets";
-        public ObservableCollection<Asset> Assets { get; private set; }
+        private ObservableCollection<Asset> _assets;
+        public ObservableCollection<Asset> Assets { get { return _assets; }
+            private set { _assets = value; } }
 
         private DispatcherTimer _timer;
 
         public AssetsViewModel()
         {
-            Assets = new ObservableCollection<Asset>(OpenApiJsonParser.ParseAssets(_assetsRequest).Result);
+            Assets = new ObservableCollection<Asset>(OpenApiJsonParser.ParseAssets(_assetsRequest));
             StartTimer();
         }
 
@@ -44,7 +46,7 @@ namespace CryptoTask.ViewModels
             if (ConnectionChecker.OK())
             {
                 Assets.Clear();
-                var assets = new ObservableCollection<Asset>(OpenApiJsonParser.ParseAssets(_assetsRequest).Result.OrderByDescending(a => a.price));
+                var assets = new ObservableCollection<Asset>(OpenApiJsonParser.ParseAssets(_assetsRequest).OrderByDescending(a => a.price));
                 foreach (var a in assets)
                     Assets.Add(a);
             }

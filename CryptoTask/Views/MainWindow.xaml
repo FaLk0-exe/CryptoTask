@@ -4,9 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CryptoTask.Views"
+		xmlns:c="clr-namespace:CalcBinding;assembly=CalcBinding"
+		xmlns:viewmodel="clr-namespace:CryptoTask.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="600.0" Width="1000.0"
+		WindowStartupLocation="CenterScreen" Background="#FF474747">
+	<Window.DataContext>
+		<viewmodel:AssetsViewModel/>
+	</Window.DataContext>
+	<Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+		<Border BorderBrush="#FF323232" BorderThickness="3,1,1,1" HorizontalAlignment="Left" Height="569" Margin="-373,-284,0,-285" VerticalAlignment="Top" Width="4"/>
+		<Image Source="whitelogo.png" HorizontalAlignment="Left" Height="56" Margin="-460,-270,0,0" VerticalAlignment="Top" Width="70"/>
+		<Button Style="{StaticResource MyButtonStyle}" Content="Search" HorizontalAlignment="Left" Margin="-496,-126,0,0" Width="123" Background="#FF474747" BorderBrush="#FF474747" FontFamily="Verdana" FontSize="20" Height="28" VerticalAlignment="Top" Foreground="White"/>
+		<Button Style="{StaticResource MyButtonStyle}" Content="Settings" HorizontalAlignment="Left" Margin="-496,-66,0,0" VerticalAlignment="Top" Width="123" Background="#FF474747" BorderBrush="#FF474747" FontFamily="Verdana" FontSize="20" Foreground="White">
+		</Button>
+		<Button Style="{StaticResource MyButtonStyle}" Content="Converter" HorizontalAlignment="Left" Margin="-496,-2,0,-26" VerticalAlignment="Top" Width="123" Background="#FF474747" BorderBrush="#FF474747" FontFamily="Verdana" FontSize="20" Foreground="White"/>
+		<Button Style="{StaticResource MyButtonStyle}" Content="Diagram" HorizontalAlignment="Left" Margin="-496,64,0,-92" VerticalAlignment="Top" Width="123" Background="#FF474747" BorderBrush="#FF474747" FontFamily="Verdana" FontSize="20" Foreground="White"/>
+		<Label  Content="Top 10 assets" Margin="-50,-270,-382,0" VerticalAlignment="Top" FontSize="30" Foreground="White" HorizontalAlignment="Left" Width="432"/>
+		<DataGrid ItemsSource="{Binding Assets}" HorizontalAlignment="Left" Height="395" Margin="-337,-196,-476,-199" VerticalAlignment="Top" Width="813"/>
+	</Grid>
 </Window>

@@ -74,6 +74,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Services\Parsers\OpenApiJsonParser.cs" />
+    <Compile Include="Services\RegexCollections\HttpRequestRegexCollection.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>

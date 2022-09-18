@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CryptoTask.Services
+namespace CryptoTask.Services.Parsers
 {
     public static class OpenApiJsonParser
     {

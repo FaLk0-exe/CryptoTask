@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:CryptoTask"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
-		<Style x:Key="MyButtonStyle" TargetType="Button">
+		<Style x:Key="MyButtonStyle1" TargetType="Button">
 			<Setter Property="Cursor" Value="Hand"/>
 			<Setter Property="OverridesDefaultStyle" Value="True"/>
 			<Setter Property="Margin" Value="5"/>
@@ -14,6 +14,22 @@
 						<Border Name="border" 
                             BorderThickness="0"
                             Padding="4,2" 
+                            Background="{TemplateBinding Background}">
+							<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+						</Border>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="MyButtonStyle2" TargetType="Button">
+			<Setter Property="Cursor" Value="Hand"/>
+			<Setter Property="OverridesDefaultStyle" Value="True"/>
+			<Setter Property="Foreground" Value="Red"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Border Name="border" 
+                            BorderThickness="0"
                             Background="{TemplateBinding Background}">
 							<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
 						</Border>

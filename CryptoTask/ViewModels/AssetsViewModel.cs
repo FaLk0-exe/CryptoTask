@@ -1,6 +1,7 @@
 ﻿using CryptoTask.Models;
 using CryptoTask.Services.Helpers;
 using CryptoTask.Services.Parsers;
+using CryptoTask.Views;
 using DevExpress.Mvvm;
 using System;
 using System.Collections.Generic;
@@ -8,18 +9,27 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using System.Windows.Threading;
 
 namespace CryptoTask.ViewModels
 {
     public class AssetsViewModel : BaseVM
     {
+        private Asset _selectedItem;
         private readonly string _assetsRequest = @"https://cryptingup.com/api/assets";
         private ObservableCollection<Asset> _assets;
         public ObservableCollection<Asset> Assets { get { return _assets; }
             private set { _assets = value; } }
 
         private DispatcherTimer _timer;
+
+        public Asset SelectedItem { 
+            set { _selectedItem = value;
+                OnPropertyChanged("SelectedItem");
+            }
+            get => _selectedItem;
+        }
 
         public AssetsViewModel()
         {
@@ -56,16 +66,25 @@ namespace CryptoTask.ViewModels
 
         private ObservableCollection<Asset> GetTop10Assets()
         {
+            if(ConnectionChecker.OK())
             return new ObservableCollection<Asset>(OpenApiJsonParser.ParseAssets(_assetsRequest).Take(10).OrderByDescending(a => a.price));
+            return new ObservableCollection<Asset>();
         }
 
-        ICommand NavigateToDetailsWindow
+        public ICommand NavigateToDetailsWindow
         {
             get
             {
-                return new DelegateCommand()=>{
-
-                }
+                return new DelegateCommand<Asset>((obj) =>
+                {
+                    if (obj != null)
+                    {
+                        var viewModel = new AssetDetailsViewModel { asset = obj };
+                        var view = new AssetDetailsWindow();
+                        view.DataContext = viewModel;
+                        view.ShowDialog();
+                    }
+                });
             }
         }
     }

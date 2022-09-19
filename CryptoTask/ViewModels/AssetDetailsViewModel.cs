@@ -15,6 +15,8 @@ namespace CryptoTask.ViewModels
     {
         public Asset asset { set; get; }
         public string WebSiteHeader { get { return asset.website == ""||asset.website==null ? "" : "Website:"; } }
+        List<Market> _markets;
+        public List<Market> Markets { set;get }
         public AssetDetailsViewModel()
         {
             asset = new Asset();

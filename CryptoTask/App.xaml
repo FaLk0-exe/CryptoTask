@@ -7,13 +7,11 @@
 		<Style x:Key="MyButtonStyle1" TargetType="Button">
 			<Setter Property="Cursor" Value="Hand"/>
 			<Setter Property="OverridesDefaultStyle" Value="True"/>
-			<Setter Property="Margin" Value="5"/>
 			<Setter Property="Template">
 				<Setter.Value>
 					<ControlTemplate TargetType="Button">
 						<Border Name="border" 
                             BorderThickness="0"
-                            Padding="4,2" 
                             Background="{TemplateBinding Background}">
 							<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
 						</Border>

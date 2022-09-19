@@ -4,19 +4,27 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CryptoTask.Views"
+		xmlns:c="clr-namespace:CalcBinding;assembly=CalcBinding"
+		xmlns:viewmodel="clr-namespace:CryptoTask.ViewModels"
         mc:Ignorable="d"
         Title="ConverterWindow" Height="450" Width="800"
 		WindowStartupLocation="CenterScreen"
 		Background="#FF474747">
+	<Window.DataContext>
+		<viewmodel:ConverterViewModel/>
+	</Window.DataContext>
 	<Grid>
 		<Image Source="whitelogo.png" HorizontalAlignment="Left" Height="56" Margin="10,10,0,0" VerticalAlignment="Top" Width="70"/>
-		<ComboBox Background="#FF474747" HorizontalAlignment="Left" Margin="148,163,0,0" VerticalAlignment="Top" Width="201"/>
-		<ComboBox Background="#FF474747" HorizontalAlignment="Left" Margin="440,163,0,0" VerticalAlignment="Top" Width="201"/>
+		<ComboBox ItemsSource="{Binding Assets}" DisplayMemberPath="name" SelectedItem="{Binding FirstSelectedItem}" Background="#FF474747" HorizontalAlignment="Left" Margin="148,163,0,0" VerticalAlignment="Top" Width="201"/>
+		<ComboBox ItemsSource="{Binding Assets}" DisplayMemberPath="name" SelectedItem="{Binding SecondSelectedItem}" Background="#FF474747" HorizontalAlignment="Left" Margin="440,163,0,0" VerticalAlignment="Top" Width="201"/>
 		<Label Foreground="White" Content="First currency" HorizontalAlignment="Left" Margin="205,137,0,0" VerticalAlignment="Top"/>
 		<Label Foreground="White" Content="Second currency" HorizontalAlignment="Left" Margin="493,137,0,0" VerticalAlignment="Top"/>
-		<TextBox Foreground="White" Background="#FF474747" HorizontalAlignment="Left" Height="23" Margin="148,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201"/>
-		<TextBox IsReadOnly="True" Foreground="White" Background="#FF474747" HorizontalAlignment="Left" Height="23" Margin="440,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201"/>
+		<TextBox Text="{Binding FirstValue, StringFormat=N2}" Foreground="White" Background="#FF474747" HorizontalAlignment="Left" Height="23" Margin="148,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201">
+			
+		</TextBox>
+		<TextBox Text="{Binding SecondValue}"  Foreground="White" Background="#FF474747" HorizontalAlignment="Left" Height="23" Margin="440,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201"/>
 		<Label Foreground="White" Content="Converter" HorizontalAlignment="Left" Margin="336,10,0,0" VerticalAlignment="Top" FontSize="24"/>
+		<Button Command="{Binding ConvertCurrency}" Foreground="White" Background="Transparent" Content="Convert" Margin="359,163,352,225" BorderBrush="White"/>
 
 	</Grid>
 </Window>

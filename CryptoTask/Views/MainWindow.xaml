@@ -20,8 +20,7 @@
 		
 		<Button Style="{StaticResource MyButtonStyle1}" Content="Settings" HorizontalAlignment="Left" Margin="-496,-66,0,0" VerticalAlignment="Top" Width="123" Background="#FF474747" BorderBrush="#FF474747" FontFamily="Verdana" FontSize="20" Foreground="White">
 		</Button>
-		<Button Style="{StaticResource MyButtonStyle1}" Content="Converter" HorizontalAlignment="Left" Margin="-496,-2,0,-26" VerticalAlignment="Top" Width="123" Background="#FF474747" BorderBrush="#FF474747" FontFamily="Verdana" FontSize="20" Foreground="White"/>
-		<Button Style="{StaticResource MyButtonStyle1}" Content="Diagram" HorizontalAlignment="Left" Margin="-496,64,0,-92" VerticalAlignment="Top" Width="123" Background="#FF474747" BorderBrush="#FF474747" FontFamily="Verdana" FontSize="20" Foreground="White"/>
+		<Button Style="{StaticResource MyButtonStyle1}" Command="{Binding NavigateToConverter}" Content="Converter" HorizontalAlignment="Left" Margin="-496,-2,0,-26" VerticalAlignment="Top" Width="123" Background="#FF474747" BorderBrush="#FF474747" FontFamily="Verdana" FontSize="20" Foreground="White"/>
 		<Label  Content="Top 10 assets" Margin="-50,-270,-382,0" VerticalAlignment="Top" FontSize="30" Foreground="White" HorizontalAlignment="Left" Width="432"/>
 		<DataGrid CanUserReorderColumns="False" IsReadOnly="True" Height="220" Width="Auto" CanUserAddRows="False" SelectedItem="{Binding SelectedItem }" ItemsSource="{Binding Assets}" HorizontalAlignment="Left" Margin="-114,-202,-186,-192" VerticalAlignment="Top" AutoGenerateColumns="False" RenderTransformOrigin="1.159,0.477">
 			<DataGrid.Columns>

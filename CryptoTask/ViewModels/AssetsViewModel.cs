@@ -101,5 +101,19 @@ namespace CryptoTask.ViewModels
                 });
             }
         }
+
+        public ICommand NavigateToConverter
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    var viewModel = new ConverterViewModel { Assets = _assets };
+                    var view = new ConverterWindow();
+                    view.DataContext = viewModel;
+                    view.ShowDialog();
+                });
+            }
+        }
     }
 }

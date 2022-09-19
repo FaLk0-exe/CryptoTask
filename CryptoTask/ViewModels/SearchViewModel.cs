@@ -16,7 +16,9 @@ namespace CryptoTask.ViewModels
     public class SearchViewModel:BaseVM
     {
         private string _attributeType= string.Empty;
-        private ObservableCollection<Asset> _assets;
+        public ObservableCollection<Asset> Assets { get; set; }
+        private string _value;
+        public string Value { set; get; }
         public string AttributeType { set; get; }
 
 
@@ -42,11 +44,11 @@ namespace CryptoTask.ViewModels
                     switch(_attributeType)
                     {
                         case "Id":
-                            asset = _assets.FirstOrDefault(a => a.assetId == value);
+                            asset = Assets.FirstOrDefault(a => a.assetId == value);
                             isAttributeTypeNotEmpty = true;
                             break;
                         case "Name":
-                            asset = _assets.FirstOrDefault(a => a.name == value);
+                            asset = Assets.FirstOrDefault(a => a.name == value);
                             isAttributeTypeNotEmpty = true;
                             break;
                         default:

@@ -4,14 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CryptoTask.Views"
+		xmlns:c="clr-namespace:CalcBinding;assembly=CalcBinding"
+		xmlns:viewmodel="clr-namespace:CryptoTask.ViewModels"
         mc:Ignorable="d"
         Title="SearchWindow" Height="197" Width="283"
 		Background="#FF474747">
+	<Window.DataContext>
+		<viewmodel:SearchViewModel/>
+	</Window.DataContext>
     <Grid>
 		<Label Foreground="White" Content="Search by" HorizontalAlignment="Left" Margin="99,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.737,0.038"/>
-		<RadioButton Content="Id" GroupName="SearchAttributes" HorizontalAlignment="Left" Margin="99,41,0,0" VerticalAlignment="Top"/>
-		<RadioButton Content="Name" GroupName="SearchAttributes" HorizontalAlignment="Left" Margin="99,61,0,0" VerticalAlignment="Top"/>
-		<TextBox HorizontalAlignment="Left" Height="23" Margin="77,81,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-		<Button Foreground="White" Background="Transparent" Content="Search" Margin="0,101,0,0" Width="60" Height="20" BorderBrush="White"></Button>
+		<RadioButton Foreground="White" Command="{Binding SelectAttribute}" CommandParameter="Id" Content="Id" GroupName="SearchAttributes" HorizontalAlignment="Left" Margin="99,41,0,0" VerticalAlignment="Top"/>
+		<RadioButton Foreground="White" Command="{Binding SelectAttribute}" CommandParameter="Id" Content="Name" GroupName="SearchAttributes" HorizontalAlignment="Left" Margin="99,61,0,0" VerticalAlignment="Top"/>
+		<TextBox  Text="{Binding Value}" Foreground="White" Background="#FF474747" HorizontalAlignment="Left" Height="23" Margin="77,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+		<Button Command="{Binding Search}" Foreground="White" Background="Transparent" Content="Search" Margin="0,101,0,0" Width="60" Height="20" BorderBrush="White"></Button>
 	</Grid>
 </Window>

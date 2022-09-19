@@ -87,5 +87,19 @@ namespace CryptoTask.ViewModels
                 });
             }
         }
+
+        public ICommand NavigateToSearch
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    var viewModel = new SearchViewModel { Assets = _assets };
+                    var view = new SearchWindow();
+                    view.DataContext = viewModel;
+                    view.ShowDialog();
+                });
+            }
+        }
     }
 }

@@ -42,7 +42,7 @@ namespace CryptoTask.ViewModels
         {
             _timer = new DispatcherTimer
             {
-                Interval = new TimeSpan(0, 0, 3)
+                Interval = new TimeSpan(0, 0, 20)
             };
             _timer.Tick += new EventHandler(Tick);
             _timer.Start();

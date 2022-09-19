@@ -18,8 +18,10 @@ namespace CryptoTask.ViewModels
         private string _attributeType= string.Empty;
         public ObservableCollection<Asset> Assets { get; set; }
         private string _value;
-        public string Value { set; get; }
-        public string AttributeType { set; get; }
+        public string Value { set { _value = value; }
+            get { return _value; } }
+        public string AttributeType { set { _attributeType = value; }
+                get{ return _attributeType; } }
 
 
         public ICommand SelectAttribute
@@ -37,18 +39,18 @@ namespace CryptoTask.ViewModels
         {
             get
             {
-                return new DelegateCommand<string>((value) =>
+                return new DelegateCommand(() =>
                 {
                     Asset asset;
                     bool isAttributeTypeNotEmpty = false;
                     switch(_attributeType)
                     {
                         case "Id":
-                            asset = Assets.FirstOrDefault(a => a.assetId == value);
+                            asset = Assets.FirstOrDefault(a => a.assetId == Value);
                             isAttributeTypeNotEmpty = true;
                             break;
                         case "Name":
-                            asset = Assets.FirstOrDefault(a => a.name == value);
+                            asset = Assets.FirstOrDefault(a => a.name == Value);
                             isAttributeTypeNotEmpty = true;
                             break;
                         default:

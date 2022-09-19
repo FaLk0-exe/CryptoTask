@@ -57,6 +57,10 @@ namespace CryptoTask.ViewModels
                                MessageBox.Show("Enter correct value!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                            }
                         }
+                        else
+                       {
+                           MessageBox.Show("Select all currencies for convertation!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                       }
                    });
             }
         }

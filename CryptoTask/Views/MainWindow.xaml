@@ -17,7 +17,7 @@
 		<Border BorderBrush="#FF323232" BorderThickness="3,1,1,1" HorizontalAlignment="Left" Height="569" Margin="-373,-284,0,-285" VerticalAlignment="Top" Width="4"/>
 		<Image Source="whitelogo.png" HorizontalAlignment="Left" Height="56" Margin="-460,-270,0,0" VerticalAlignment="Top" Width="70"/>
 		<Button Command="{Binding NavigateToSearch}" Style="{StaticResource MyButtonStyle1}" Content="Search" HorizontalAlignment="Left" Margin="-496,-126,0,0" Width="123" Background="#FF474747" BorderBrush="#FF474747" FontFamily="Verdana" FontSize="20" Height="28" VerticalAlignment="Top" Foreground="White"/>
-		
+
 		<Button Style="{StaticResource MyButtonStyle1}" Content="Settings" HorizontalAlignment="Left" Margin="-496,-66,0,0" VerticalAlignment="Top" Width="123" Background="#FF474747" BorderBrush="#FF474747" FontFamily="Verdana" FontSize="20" Foreground="White">
 		</Button>
 		<Button Style="{StaticResource MyButtonStyle1}" Command="{Binding NavigateToConverter}" Content="Converter" HorizontalAlignment="Left" Margin="-496,-2,0,-26" VerticalAlignment="Top" Width="123" Background="#FF474747" BorderBrush="#FF474747" FontFamily="Verdana" FontSize="20" Foreground="White"/>
@@ -33,5 +33,7 @@
 				CommandParameter="{Binding SelectedItem}" />
 			</DataGrid.InputBindings>
 		</DataGrid>
+		<Border BorderBrush="#FF323232" BorderThickness="0,3,0,0" HorizontalAlignment="Left" Height="3" Margin="-373,227,-493,-230" VerticalAlignment="Top" Width="874"/>
+		<Label Content="Tip: Use left double click at row for details" HorizontalAlignment="Left" Margin="-364,246,0,-271" VerticalAlignment="Top" Foreground="White" FontFamily="Verdana" FontSize="16"/>
 	</Grid>
 </Window>

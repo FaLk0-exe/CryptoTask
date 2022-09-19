@@ -1,0 +1,75 @@
+﻿using CryptoTask.Models;
+using DevExpress.Mvvm;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+
+namespace CryptoTask.ViewModels
+{
+    public class ConverterViewModel : BaseVM
+    {
+        public ObservableCollection<Asset> Assets { set; get; }
+        public string FirstValue { set; get; }
+        public string SecondValue { set; get; }
+        public Asset FirstSelectedItem { set; get; }
+        public Asset SecondSelectedItem { set; get; }
+        private char[] _requiredChars = new char[] {'1','2','3','4','5','6','7','8'
+        ,'9','0','.'};
+        public decimal FirstDValue { 
+            get
+            {
+                return Convert.ToDecimal(FirstValue);
+            }
+            set
+            {
+                FirstValue = value.ToString(); 
+            }
+        }
+        public decimal SecondDValue
+        {
+            get
+            {
+                return Convert.ToDecimal(SecondValue);
+            }
+            set
+            {
+                SecondValue = value.ToString();
+            }
+        }
+        public ICommand ValidateText
+        {
+            get
+            {
+                return new DelegateCommand<string>(
+                    (str) =>
+                    {
+                        if (!_requiredChars.Any(c => c == str[str.Length - 1]))
+                        {
+                            str = str.Remove(str.Length - 1);
+                        }
+
+                    });
+            }
+        }
+
+        public ICommand ConvertCurrency
+        {
+            get
+            {
+                return new DelegateCommand(
+                   () =>
+                   {
+                        if(FirstSelectedItem!=null&&SecondSelectedItem!=null)
+                        {
+                           decimal crossCourse = FirstSelectedItem.price / SecondSelectedItem.price;
+                           SecondDValue = FirstDValue * crossCourse;
+                        }
+                   });
+            }
+        }
+    }
+}

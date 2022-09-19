@@ -74,6 +74,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\Market.cs" />
     <Compile Include="Services\Helpers\ConnectionChecker.cs" />
     <Compile Include="Services\Parsers\OpenApiJsonParser.cs" />
     <Compile Include="Services\RegexCollections\HttpRequestRegexCollection.cs" />

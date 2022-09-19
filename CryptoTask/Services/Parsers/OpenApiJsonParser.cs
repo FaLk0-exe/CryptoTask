@@ -14,6 +14,20 @@ namespace CryptoTask.Services.Parsers
 {
     public static class OpenApiJsonParser
     {
+        private static List<T> Parse<T>(string request,string className)
+        {
+          
+           
+                    var httpClient = new HttpClient();
+                    var response = httpClient.GetAsync(request);
+                    string body = response.Result.Content.ReadAsStringAsync().Result;
+                    Regex r1 = new Regex(@",""next"":""\d+?""");
+                    Regex r2 = new Regex($@"{{""{className}"":");
+                    body = r2.Replace(r1.Replace(body, ""), "");
+                    body = body.Remove(body.Length - 1);
+                    return JsonConvert.DeserializeObject<List<T>>(body);
+        }
+
         public static List<Asset> ParseAssets(string request)
         {
             if (!HttpRequestRegexCollection.AssetsRequestRegex.IsMatch(request))
@@ -24,18 +38,32 @@ namespace CryptoTask.Services.Parsers
             {
                 if (ConnectionChecker.OK())
                 {
-                    var httpClient = new HttpClient();
-                    var response = httpClient.GetAsync(request);
-                    string body = response.Result.Content.ReadAsStringAsync().Result;
-                    Regex r1 = new Regex(@",""next"":""\d+?""");
-                    Regex r2 = new Regex(@"{""assets"":");
-                    body = r2.Replace(r1.Replace(body, ""), "");
-                    body = body.Remove(body.Length - 1);
-                    return JsonConvert.DeserializeObject<List<Asset>>(body);
+                    return Parse<Asset>(request, "assets");
                 }
-                return new List<Asset>();
+                else
+                {
+                    return new List<Asset>();
+                }
             }
         }
 
+        public static List<Market> ParseMarkets(string request)
+        {
+            if (!HttpRequestRegexCollection.MarketsRequestRegex.IsMatch(request))
+            {
+                throw new ArgumentException("markets request was invalid!");
+            }
+            else
+            {
+                if (ConnectionChecker.OK())
+                {
+                    return Parse<Market>(request, "markets");
+                }
+                else
+                {
+                    return new List<Market>();
+                }
+            }
+        }
     }
 }

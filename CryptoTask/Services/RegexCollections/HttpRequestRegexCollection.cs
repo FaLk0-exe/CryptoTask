@@ -11,5 +11,7 @@ namespace CryptoTask.Services.RegexCollections
     {
         public static readonly Regex AssetsRequestRegex =
         new Regex(@"^https://cryptingup\.com/api/assets");
+        public static readonly Regex MarketsRequestRegex =
+        new Regex(@"^https://cryptingup\.com/api/markets");
     }
 }

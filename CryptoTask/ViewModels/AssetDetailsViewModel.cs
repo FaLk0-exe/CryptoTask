@@ -1,4 +1,5 @@
 ﻿using CryptoTask.Models;
+using CryptoTask.Services.Parsers;
 using DevExpress.Mvvm;
 using System;
 using System.Collections.Generic;
@@ -16,10 +17,11 @@ namespace CryptoTask.ViewModels
         public Asset asset { set; get; }
         public string WebSiteHeader { get { return asset.website == ""||asset.website==null ? "" : "Website:"; } }
         List<Market> _markets;
-        public List<Market> Markets { set;get }
+        public List<Market> Markets { set; get; }
         public AssetDetailsViewModel()
         {
             asset = new Asset();
+            Markets = OpenApiJsonParser.ParseMarkets($"https://cryptingup.com/api/assets/{asset.assetId}/markets");
         }
 
         public ICommand NavigateToWebSite

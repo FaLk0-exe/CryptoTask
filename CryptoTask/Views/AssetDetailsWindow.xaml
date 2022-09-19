@@ -25,7 +25,7 @@
 		<Label FontStyle="Italic" Content="Change, 1h:" Foreground="White" HorizontalAlignment="Left" Margin="200,160,0,0" VerticalAlignment="Top"/>
 		<Label FontStyle="Italic" Content="Change, 24h:" Foreground="White" HorizontalAlignment="Left" Margin="430,160,0,0" VerticalAlignment="Top"/>
 		<Label FontStyle="Italic" Content="Change, 7d:" Foreground="White" HorizontalAlignment="Left" Margin="200,190,0,0" VerticalAlignment="Top"/>
-
+		<Label FontStyle="Italic" Content="Markets" Foreground="White" HorizontalAlignment="Left" Margin="200,190,0,0" VerticalAlignment="Top"/>
 		<Label Content="{Binding asset.assetId}" Foreground="White"  HorizontalAlignment="Left" Margin="280,100,0,0" VerticalAlignment="Top"/>
 		<Label Content="{Binding asset.name}" Foreground="White" HorizontalAlignment="Left" Margin="520,100,0,0" VerticalAlignment="Top"/>
 		<Label Content="{Binding asset.price}" Foreground="White" HorizontalAlignment="Left" Margin="280,130,0,0" VerticalAlignment="Top"/>

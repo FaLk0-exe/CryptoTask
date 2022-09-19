@@ -11,5 +11,17 @@ namespace CryptoTask.Models
     {
         [JsonProperty("exchange_id")]
         public string exchangeId { get; set; }
+        [JsonProperty("price_unconverted")]
+        public decimal priceUnconverted { get; set; }
+        [JsonProperty("price")]
+        public decimal price { get; set; }
+
+        public string InformationLine { 
+            get {
+                return exchangeId + " - " +
+                    priceUnconverted.ToString() +
+                    "/" + price.ToString();
+            } 
+        }
     }
 }

@@ -85,6 +85,9 @@
     <Compile Include="Views\AssetDetailsWindow.xaml.cs">
       <DependentUpon>AssetDetailsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ConverterWindow.xaml.cs">
+      <DependentUpon>ConverterWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -123,6 +126,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\AssetDetailsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ConverterWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

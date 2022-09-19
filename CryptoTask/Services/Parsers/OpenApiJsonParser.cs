@@ -21,7 +21,7 @@ namespace CryptoTask.Services.Parsers
                     var httpClient = new HttpClient();
                     var response = httpClient.GetAsync(request);
                     string body = response.Result.Content.ReadAsStringAsync().Result;
-                    Regex r1 = new Regex(@",""next"":""\d+?""");
+                    Regex r1 = new Regex(@",""next"":""\d*?""");
                     Regex r2 = new Regex($@"{{""{className}"":");
                     body = r2.Replace(r1.Replace(body, ""), "");
                     body = body.Remove(body.Length - 1);

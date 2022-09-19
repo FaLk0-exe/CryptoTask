@@ -19,6 +19,7 @@ namespace CryptoTask.ViewModels
         private Asset _selectedItem;
         private readonly string _assetsRequest = @"https://cryptingup.com/api/assets";
         private ObservableCollection<Asset> _assets;
+
         public ObservableCollection<Asset> Assets { get { return _assets; }
             private set { _assets = value; } }
 
@@ -79,8 +80,12 @@ namespace CryptoTask.ViewModels
                 {
                     if (obj != null)
                     {
-                        var viewModel = new AssetDetailsViewModel { asset = obj };
-                        var view = new AssetDetailsWindow();
+                        var viewModel = new AssetDetailsViewModel { asset = obj,
+                            MarketInfo = new ObservableCollection<string>
+                            (OpenApiJsonParser.ParseMarkets
+                            ($"https://cryptingup.com/api/assets/{obj.assetId}/markets")
+                            .Select(m=>m.InformationLine).ToList())};
+                        AssetDetailsWindow view = new AssetDetailsWindow();
                         view.DataContext = viewModel;
                         view.ShowDialog();
                     }

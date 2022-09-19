@@ -75,11 +75,13 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Market.cs" />
+    <Compile Include="Services\Helpers\Commands.cs" />
     <Compile Include="Services\Helpers\ConnectionChecker.cs" />
     <Compile Include="Services\Parsers\OpenApiJsonParser.cs" />
     <Compile Include="Services\RegexCollections\HttpRequestRegexCollection.cs" />
     <Compile Include="ViewModels\AssetDetailsViewModel.cs" />
     <Compile Include="ViewModels\AssetsViewModel.cs" />
+    <Compile Include="ViewModels\SearchViewModel.cs" />
     <Compile Include="Views\AssetDetailsWindow.xaml.cs">
       <DependentUpon>AssetDetailsWindow.xaml</DependentUpon>
     </Compile>

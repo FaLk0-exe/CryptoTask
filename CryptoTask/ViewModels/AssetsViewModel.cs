@@ -20,7 +20,7 @@ namespace CryptoTask.ViewModels
         private readonly string _assetsRequest = @"https://cryptingup.com/api/assets";
         private ObservableCollection<Asset> _assets;
 
-        public ObservableCollection<Asset> Assets { get { return _assets; }
+        public ObservableCollection<Asset> Assets { get { return new ObservableCollection<Asset>(_assets.Take(10).OrderByDescending(a => a.price).ToList()); }
             private set { _assets = value; } }
 
         private DispatcherTimer _timer;
@@ -67,9 +67,14 @@ namespace CryptoTask.ViewModels
 
         private ObservableCollection<Asset> GetTop10Assets()
         {
-            if(ConnectionChecker.OK())
-            return new ObservableCollection<Asset>(OpenApiJsonParser.ParseAssets(_assetsRequest).Take(10).OrderByDescending(a => a.price));
-            return new ObservableCollection<Asset>();
+            if (ConnectionChecker.OK())
+            {
+                return new ObservableCollection<Asset>(OpenApiJsonParser.ParseAssets(_assetsRequest));
+            }
+            else
+            {
+                return new ObservableCollection<Asset>();
+            }
         }
 
         public ICommand NavigateToDetailsWindow
@@ -78,17 +83,7 @@ namespace CryptoTask.ViewModels
             {
                 return new DelegateCommand<Asset>((obj) =>
                 {
-                    if (obj != null)
-                    {
-                        var viewModel = new AssetDetailsViewModel { asset = obj,
-                            MarketInfo = new ObservableCollection<string>
-                            (OpenApiJsonParser.ParseMarkets
-                            ($"https://cryptingup.com/api/assets/{obj.assetId}/markets")
-                            .Select(m=>m.InformationLine).ToList())};
-                        AssetDetailsWindow view = new AssetDetailsWindow();
-                        view.DataContext = viewModel;
-                        view.ShowDialog();
-                    }
+                    Commands.OpenInfoAboutAsset(obj);
                 });
             }
         }

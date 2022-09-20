@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace CryptoTask.ViewModels
 {
-    public class SettingViewModel:BaseVM
+    public class SettingsViewModel:BaseVM
     {
         public ICommand ChangeTheme
         {

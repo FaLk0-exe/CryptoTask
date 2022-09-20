@@ -84,6 +84,7 @@
     <Compile Include="ViewModels\AssetsViewModel.cs" />
     <Compile Include="ViewModels\ConverterViewModel.cs" />
     <Compile Include="ViewModels\SearchViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="Views\AssetDetailsWindow.xaml.cs">
       <DependentUpon>AssetDetailsWindow.xaml</DependentUpon>
     </Compile>

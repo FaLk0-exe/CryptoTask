@@ -7,33 +7,33 @@
 		xmlns:c="clr-namespace:CalcBinding;assembly=CalcBinding"
 		xmlns:viewmodel="clr-namespace:CryptoTask.ViewModels"
         mc:Ignorable="d"
-        Background="#FF474747" Title="AssetDetailsWindow" Height="450" Width="800"
+        Title="AssetDetailsWindow" Height="450" Width="800"
 		WindowStartupLocation="CenterScreen"
 		ResizeMode="CanMinimize">
 	<Window.DataContext>
 		<viewmodel:AssetDetailsViewModel/>
 	</Window.DataContext>
-	<Grid>
-		<Image Source="whitelogo.png" HorizontalAlignment="Left" Height="56" VerticalAlignment="Top" Width="70" Margin="10,10,0,0" RenderTransformOrigin="0.588,0.661"/>
-		<Label HorizontalAlignment="Left" Margin="200,10,0,0" VerticalAlignment="Top">
-			<Label Content="Detailed asset's information" FontSize="30px" Height="53" Width="390" Foreground="White"/>
+	<Grid Style="{DynamicResource GridStyle}">
+		<Image Style="{DynamicResource LogoStyle}" HorizontalAlignment="Left" Height="56" VerticalAlignment="Top" Width="70" Margin="10,10,0,0" RenderTransformOrigin="0.588,0.661"/>
+		<Label Style="{DynamicResource LabelStyle}" HorizontalAlignment="Left" Margin="200,10,0,0" VerticalAlignment="Top">
+			<Label Style="{DynamicResource LabelStyle}" Content="Detailed asset's information" FontSize="30px" Height="53" Width="390"/>
 		</Label>
-		<Label FontStyle="Italic" Content="Id:" Foreground="White" HorizontalAlignment="Left" Margin="200,100,0,0" VerticalAlignment="Top"/>
-		<Label FontStyle="Italic" Content="Name:" Foreground="White" HorizontalAlignment="Left" Margin="430,100,0,0" VerticalAlignment="Top"/>
-		<Label FontStyle="Italic" Content="Price:" Foreground="White" HorizontalAlignment="Left" Margin="200,130,0,0" VerticalAlignment="Top"/>
-		<Label FontStyle="Italic" Content="Volume, 24h:" Foreground="White" HorizontalAlignment="Left" Margin="430,130,0,0" VerticalAlignment="Top"/>
-		<Label FontStyle="Italic" Content="Change, 1h:" Foreground="White" HorizontalAlignment="Left" Margin="200,160,0,0" VerticalAlignment="Top"/>
-		<Label FontStyle="Italic" Content="Change, 24h:" Foreground="White" HorizontalAlignment="Left" Margin="430,160,0,0" VerticalAlignment="Top"/>
-		<Label FontStyle="Italic" Content="Change, 7d:" Foreground="White" HorizontalAlignment="Left" Margin="200,190,0,0" VerticalAlignment="Top"/>
-		<Label FontStyle="Italic" Content="Available propositions" Foreground="White" HorizontalAlignment="Left" Margin="79,294,0,0" VerticalAlignment="Top"/>
-		<Label Content="{Binding asset.assetId}" Foreground="White"  HorizontalAlignment="Left" Margin="280,100,0,0" VerticalAlignment="Top"/>
-		<Label Content="{Binding asset.name}" Foreground="White" HorizontalAlignment="Left" Margin="520,100,0,0" VerticalAlignment="Top"/>
-		<Label Content="{Binding asset.price}" Foreground="White" HorizontalAlignment="Left" Margin="280,130,0,0" VerticalAlignment="Top"/>
-		<Label Content="{Binding asset.volume24h}" Foreground="White" HorizontalAlignment="Left" Margin="520,130,0,0" VerticalAlignment="Top"/>
-		<Label Content="{Binding asset.change1h}" Foreground="White" HorizontalAlignment="Left" Margin="280,160,0,0" VerticalAlignment="Top"/>
-		<Label Content="{Binding asset.change24h}" Foreground="White" HorizontalAlignment="Left" Margin="520,160,0,0" VerticalAlignment="Top"/>
-		<Label Content="{Binding asset.change7d}" Foreground="White" HorizontalAlignment="Left" Margin="280,190,0,0" VerticalAlignment="Top"/>
-		<Label FontStyle="Italic" Content="Website" Foreground="White" HorizontalAlignment="Left" Margin="431,190,0,0" VerticalAlignment="Top"/>
+		<Label Style="{DynamicResource LabelStyle}" FontStyle="Italic" Content="Id:"  HorizontalAlignment="Left" Margin="200,100,0,0" VerticalAlignment="Top"/>
+		<Label Style="{DynamicResource LabelStyle}" FontStyle="Italic" Content="Name:"  HorizontalAlignment="Left" Margin="430,100,0,0" VerticalAlignment="Top"/>
+		<Label Style="{DynamicResource LabelStyle}" FontStyle="Italic" Content="Price:"  HorizontalAlignment="Left" Margin="200,130,0,0" VerticalAlignment="Top"/>
+		<Label Style="{DynamicResource LabelStyle}" FontStyle="Italic" Content="Volume, 24h:" HorizontalAlignment="Left" Margin="430,130,0,0" VerticalAlignment="Top"/>
+		<Label Style="{DynamicResource LabelStyle}" FontStyle="Italic" Content="Change, 1h:"  HorizontalAlignment="Left" Margin="200,160,0,0" VerticalAlignment="Top"/>
+		<Label Style="{DynamicResource LabelStyle}" FontStyle="Italic" Content="Change, 24h:"  HorizontalAlignment="Left" Margin="430,160,0,0" VerticalAlignment="Top"/>
+		<Label Style="{DynamicResource LabelStyle}" FontStyle="Italic" Content="Change, 7d:"  HorizontalAlignment="Left" Margin="200,190,0,0" VerticalAlignment="Top"/>
+		<Label Style="{DynamicResource LabelStyle}" FontStyle="Italic" Content="Available propositions" HorizontalAlignment="Left" Margin="79,294,0,0" VerticalAlignment="Top"/>
+		<Label Style="{DynamicResource LabelStyle}" Content="{Binding asset.assetId}"  HorizontalAlignment="Left" Margin="280,100,0,0" VerticalAlignment="Top"/>
+		<Label Style="{DynamicResource LabelStyle}" Content="{Binding asset.name}" HorizontalAlignment="Left" Margin="520,100,0,0" VerticalAlignment="Top"/>
+		<Label Style="{DynamicResource LabelStyle}" Content="{Binding asset.price}"  HorizontalAlignment="Left" Margin="280,130,0,0" VerticalAlignment="Top"/>
+		<Label Style="{DynamicResource LabelStyle}" Content="{Binding asset.volume24h}"  HorizontalAlignment="Left" Margin="520,130,0,0" VerticalAlignment="Top"/>
+		<Label Style="{DynamicResource LabelStyle}" Content="{Binding asset.change1h}"  HorizontalAlignment="Left" Margin="280,160,0,0" VerticalAlignment="Top"/>
+		<Label Style="{DynamicResource LabelStyle}" Content="{Binding asset.change24h}"  HorizontalAlignment="Left" Margin="520,160,0,0" VerticalAlignment="Top"/>
+		<Label Style="{DynamicResource LabelStyle}" Content="{Binding asset.change7d}"  HorizontalAlignment="Left" Margin="280,190,0,0" VerticalAlignment="Top"/>
+		<Label Style="{DynamicResource LabelStyle}" FontStyle="Italic" Content="Website"  HorizontalAlignment="Left" Margin="431,190,0,0" VerticalAlignment="Top"/>
 		<Button FontStyle="Italic" Content="Navigate" Margin="520,195,208,201" Command="{Binding NavigateToWebSite}" Style="{StaticResource MyButtonStyle2}" FontSize="12"/>
 		<ListBox ItemsSource="{Binding MarketInfo}" HorizontalAlignment="Left" Height="168" Margin="208,225,0,0" VerticalAlignment="Top" Width="378"/>
 

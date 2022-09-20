@@ -3,37 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:CryptoTask"
              StartupUri="Views/MainWindow.xaml">
-    <Application.Resources>
-		<Style x:Key="MyButtonStyle1" TargetType="Button">
-			<Setter Property="Cursor" Value="Hand"/>
-			<Setter Property="OverridesDefaultStyle" Value="True"/>
-			<Setter Property="Template">
-				<Setter.Value>
-					<ControlTemplate TargetType="Button">
-						<Border Name="border" 
-                            BorderThickness="0"
-                            Background="{TemplateBinding Background}">
-							<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-						</Border>
-					</ControlTemplate>
-				</Setter.Value>
-			</Setter>
-		</Style>
-		<Style x:Key="MyButtonStyle2" TargetType="Button">
-			<Setter Property="Cursor" Value="Hand"/>
-			<Setter Property="OverridesDefaultStyle" Value="True"/>
-			<Setter Property="Foreground" Value="Red"/>
-			<Setter Property="Template">
-				<Setter.Value>
-					<ControlTemplate TargetType="Button">
-						<Border Name="border" 
-                            BorderThickness="0"
-                            Background="{TemplateBinding Background}">
-							<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-						</Border>
-					</ControlTemplate>
-				</Setter.Value>
-			</Setter>
-		</Style>
+	<Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="Dictionaries/LightDictionary.xaml"/>
+				<ResourceDictionary Source="Dictionaries/DarkDictionary.xaml"/>
+				<ResourceDictionary Source="Dictionaries/Buttons.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
 	</Application.Resources>
 </Application>

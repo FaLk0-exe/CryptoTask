@@ -75,6 +75,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Market.cs" />
+    <Compile Include="Services\Helpers\ThemeSwitcher.cs" />
     <Compile Include="Services\Helpers\Commands.cs" />
     <Compile Include="Services\Helpers\ConnectionChecker.cs" />
     <Compile Include="Services\Parsers\OpenApiJsonParser.cs" />
@@ -145,6 +146,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Views\whitelogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dictionaries\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

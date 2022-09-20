@@ -16,8 +16,6 @@ namespace CryptoTask.Models
         [JsonProperty("name")]
         public string name { get; set; }
 
-        private string _website;
-
         [JsonProperty("website")]
         public string website { get; set; }
 

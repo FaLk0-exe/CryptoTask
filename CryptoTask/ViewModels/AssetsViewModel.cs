@@ -115,5 +115,19 @@ namespace CryptoTask.ViewModels
                 });
             }
         }
+
+        public ICommand NavigateToSettings
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    var viewModel = new SettingsViewModel();
+                    var view = new SettingsWindow();
+                    view.DataContext = viewModel;
+                    view.ShowDialog();
+                });
+            }
+        }
     }
 }

@@ -8,8 +8,9 @@
 		xmlns:viewmodel="clr-namespace:CryptoTask.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="600.0" Width="1000.0"
-		WindowStartupLocation="CenterScreen" Background="#FF474747"
-		ResizeMode="CanMinimize">
+		WindowStartupLocation="CenterScreen"
+		ResizeMode="CanMinimize"
+		 Style="{DynamicResource WindowStyle}">
 	<Window.DataContext>
 		<viewmodel:AssetsViewModel/>
 	</Window.DataContext>
@@ -18,7 +19,7 @@
 		<Image Style="{DynamicResource LogoStyle}" HorizontalAlignment="Left" Height="56" Margin="-460,-270,0,0" VerticalAlignment="Top" Width="70"/>
 		<Button Command="{Binding NavigateToSearch}" Style="{DynamicResource ButtonStyle}" Content="Search" HorizontalAlignment="Left" Margin="-496,-126,0,0" Width="123" FontFamily="Verdana" FontSize="20" Height="28" VerticalAlignment="Top"/>
 
-		<Button Style="{DynamicResource ButtonStyle}" Content="Settings" HorizontalAlignment="Left" Margin="-496,-66,0,0" VerticalAlignment="Top" Width="123" FontFamily="Verdana" FontSize="20">
+		<Button Style="{DynamicResource ButtonStyle}" Command="{Binding NavigateToSettings}" Content="Settings" HorizontalAlignment="Left" Margin="-496,-66,0,0" VerticalAlignment="Top" Width="123" FontFamily="Verdana" FontSize="20">
 		</Button>
 		<Button Style="{DynamicResource ButtonStyle}" Command="{Binding NavigateToConverter}" Content="Converter" HorizontalAlignment="Left" Margin="-496,-2,0,-26" VerticalAlignment="Top" Width="123"  FontFamily="Verdana" FontSize="20" />
 		<Label Style="{DynamicResource LabelStyle}"  Content="Top 10 assets" Margin="-50,-270,-382,0" VerticalAlignment="Top" FontSize="30" HorizontalAlignment="Left" Width="432"/>

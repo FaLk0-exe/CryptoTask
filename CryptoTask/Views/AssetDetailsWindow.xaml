@@ -9,11 +9,12 @@
         mc:Ignorable="d"
         Title="AssetDetailsWindow" Height="450" Width="800"
 		WindowStartupLocation="CenterScreen"
-		ResizeMode="CanMinimize">
+		ResizeMode="CanMinimize"
+		Style="{DynamicResource WindowStyle}">
 	<Window.DataContext>
 		<viewmodel:AssetDetailsViewModel/>
 	</Window.DataContext>
-	<Grid Style="{DynamicResource GridStyle}">
+	<Grid>
 		<Image Style="{DynamicResource LogoStyle}" HorizontalAlignment="Left" Height="56" VerticalAlignment="Top" Width="70" Margin="10,10,0,0" RenderTransformOrigin="0.588,0.661"/>
 		<Label Style="{DynamicResource LabelStyle}" HorizontalAlignment="Left" Margin="200,10,0,0" VerticalAlignment="Top">
 			<Label Style="{DynamicResource LabelStyle}" Content="Detailed asset's information" FontSize="30px" Height="53" Width="390"/>

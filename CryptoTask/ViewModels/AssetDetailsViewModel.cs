@@ -16,9 +16,7 @@ namespace CryptoTask.ViewModels
     public class AssetDetailsViewModel:BaseVM
     {
         public Asset asset { set; get; }
-        private ObservableCollection<string> marketsInfo;
-        public ObservableCollection<string> MarketInfo { set { marketsInfo = value; }
-            get { return marketsInfo; } }
+        public ObservableCollection<string> MarketInfo { set; get; }
         public AssetDetailsViewModel() { }
 
         public ICommand NavigateToWebSite

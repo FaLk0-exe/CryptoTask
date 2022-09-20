@@ -22,7 +22,7 @@ namespace CryptoTask.ViewModels
                         if (theme == "Dark")
                             ThemeSwitcher.SwitchDarkTheme();
                         if(theme=="Light")
-                            ThemeSwitcher.SwitchDarkTheme();
+                            ThemeSwitcher.SwitchLightTheme();
                     });
             }
         }

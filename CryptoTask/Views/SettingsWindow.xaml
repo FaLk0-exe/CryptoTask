@@ -8,12 +8,12 @@
 		xmlns:viewmodel="clr-namespace:CryptoTask.ViewModels"
         mc:Ignorable="d"
         Title="SettingsWindow" Height="197" Width="283"
-		Background="#FF474747"
+		 Style="{DynamicResource WindowStyle}"
 		WindowStartupLocation="CenterScreen">
 	<Window.DataContext>
 		<viewmodel:SettingsViewModel/>
 	</Window.DataContext>
-	<Grid Style="{DynamicResource GridStyle}">
+	<Grid>
 		<Label Style="{DynamicResource LabelStyle}" Content="Settings" HorizontalAlignment="Left" Margin="105,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.737,0.038"/>
 		<RadioButton  Style="{DynamicResource RadioButtonStyle}" Command="{Binding ChangeTheme}" CommandParameter="Light" Content="Light" GroupName="Theme" HorizontalAlignment="Left" Margin="73,67,0,0" VerticalAlignment="Top"/>
 		<RadioButton Style="{DynamicResource RadioButtonStyle}" Command="{Binding ChangeTheme}" CommandParameter="Dark" Content="Dark" GroupName="Theme" HorizontalAlignment="Left" Margin="144,67,0,0" VerticalAlignment="Top"/>

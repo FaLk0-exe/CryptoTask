@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="ConverterWindow" Height="450" Width="800"
 		WindowStartupLocation="CenterScreen"
-		Background="#FF474747">
+		 Style="{DynamicResource WindowStyle}">
 	<Window.DataContext>
 		<viewmodel:ConverterViewModel/>
 	</Window.DataContext>

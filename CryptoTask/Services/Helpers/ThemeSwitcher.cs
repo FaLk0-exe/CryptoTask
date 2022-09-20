@@ -19,12 +19,12 @@ namespace CryptoTask.Services.Helpers
 
         public static void SwitchLightTheme()
         {
-            SwitchTheme("Dictionaries/LightDictionary.xaml");
+            SwitchTheme(@"Dictionaries/LightDictionary.xaml");
         }
 
         public static void SwitchDarkTheme()
         {
-            SwitchTheme("Dictionaries/DarkDictionary.xaml");
+            SwitchTheme(@"Dictionaries/DarkDictionary.xaml");
         }
     }
 }

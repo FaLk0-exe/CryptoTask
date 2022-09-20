@@ -15,8 +15,8 @@
 	</Window.DataContext>
 	<Grid Style="{DynamicResource GridStyle}">
 		<Label Style="{DynamicResource LabelStyle}" Content="Search by" HorizontalAlignment="Left" Margin="99,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.737,0.038"/>
-		<RadioButton Foreground="White" Command="{Binding SelectAttribute}" CommandParameter="Id" Content="Id" GroupName="SearchAttributes" HorizontalAlignment="Left" Margin="99,41,0,0" VerticalAlignment="Top"/>
-		<RadioButton Foreground="White" Command="{Binding SelectAttribute}" CommandParameter="Name" Content="Name" GroupName="SearchAttributes" HorizontalAlignment="Left" Margin="99,61,0,0" VerticalAlignment="Top"/>
+		<RadioButton Style="{DynamicResource RadioButtonStyle}" Command="{Binding SelectAttribute}" CommandParameter="Id" Content="Id" GroupName="SearchAttributes" HorizontalAlignment="Left" Margin="99,41,0,0" VerticalAlignment="Top"/>
+		<RadioButton  Style="{DynamicResource RadioButtonStyle}" Command="{Binding SelectAttribute}" CommandParameter="Name" Content="Name" GroupName="SearchAttributes" HorizontalAlignment="Left" Margin="99,61,0,0" VerticalAlignment="Top"/>
 		<TextBox Style="{DynamicResource TextBoxStyle}"  Text="{Binding Value}"  HorizontalAlignment="Left" Height="23" Margin="77,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 		<Button Style="{DynamicResource ButtonStyle}"  Command="{Binding Search}" Content="Search" Margin="0,101,0,0" Width="60" Height="20"></Button>
 		<Image Style="{DynamicResource LogoStyle}" HorizontalAlignment="Left" Height="37" Margin="10,10,0,0" VerticalAlignment="Top" Width="38"/>

@@ -13,5 +13,5 @@ Also this page have 'Website button'. This button navigate you to the currency w
 * Converter one currency to another;
 * Settings page, which allows to change UI Theme;
 ## Support
-* Telegram - @faLk0_exe
+* Telegram - @proger_exe
 * Gmail - aprox512@gmail.com
